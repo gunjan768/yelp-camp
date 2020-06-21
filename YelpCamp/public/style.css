@@ -1,0 +1,8 @@
+body{
+    color: purple;
+    background: dodgerblue;
+}
+
+#delete-form{
+    display: inline;
+}

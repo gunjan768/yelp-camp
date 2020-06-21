@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Yelp Camp</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- below bootstrap cdn is from w3schools above one from bootstrap site -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Yelpcamp</a>
+            </div>
+        </div>
+        
+        <nav class="collapse navbar-collapse">
+            <ul class="nav navbar-bar navbar-right">
+                
+                <!-- We can access any variables in partials ( header or footer ) which are passed 
+                    to templates where these partials are included -->
+                    
+                <!-- So we need to pass currentUser variable to every templates (pages) as we have included 
+                    these header partials in every pages -->
+                    
+                <% if(!currentUser)
+                { %>
+                    <li ><a class="nav-link" href="/login">Login</a></li>
+                    <li ><a class="nav-link" href="/register">Sign in</a></li>
+                <% } 
+                
+                else
+                { %>
+                    <li> <a href="#"> Signed In as <%= currentUser.username %> </a> </li>
+                    <li><a class="nav-link" href="/logout">Logout</a></li>
+                <% } %>
+                
+            </ul>
+        </nav>
+
+    </nav>
+
+    <div class="container">
+        <% if(error && error.length) 
+        { %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+
+        <% if(success && success.length) 
+        { %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+    </div>
