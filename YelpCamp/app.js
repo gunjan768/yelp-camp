@@ -60,7 +60,7 @@ app.use(flash());
 
 app.use(session(
 {
-    secret: "Emilia is love of my life" ,
+    secret: "" ,
     resave: false ,
     saveUninitialized: false
 }));
