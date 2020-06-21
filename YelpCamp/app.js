@@ -25,7 +25,7 @@ var indexRoutes         =       require("./routes/index");
 const port              =       process.env.PORT || 3000;
 
 // mongoose.connect("mongodb://localhost:27017/yelp_camp");
-mongoose.connect("mongodb+srv://gunjan768:emilia12@yelpcamp-cph3w.mongodb.net/test?retryWrites=true&w=majority")
+mongoose.connect("")
 .then(() => 
 {
     console.log("Connected to Database");
